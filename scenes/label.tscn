@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://1p1mrwv8i2p2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5tdc3"]
+
+[node name="Text" type="Label"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_5tdc3")
+text = "Ale
+"

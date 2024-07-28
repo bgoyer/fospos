@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://psaq8n0lrxgw"]
+
+[ext_resource type="Script" path="res://scripts/Order_Grid.gd" id="1_0q17u"]
+
+[sub_resource type="Theme" id="Theme_46nbm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dw0gd"]
+bg_color = Color(0.101961, 0.101961, 0.101961, 1)
+
+[node name="Panel" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0q17u")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Categories" type="Panel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.14
+theme = SubResource("Theme_46nbm")
+theme_override_styles/panel = SubResource("StyleBoxFlat_dw0gd")
+
+[node name="CategoryButtonContainer" type="VBoxContainer" parent="HBoxContainer/Categories"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spacer" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.01
+
+[node name="Main" type="Panel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.05
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/Main"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Grid Container" type="Control" parent="HBoxContainer/Main/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

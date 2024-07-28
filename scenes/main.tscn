@@ -1,0 +1,1165 @@
+[gd_scene load_steps=55 format=3 uid="uid://cljocsb0t3t8h"]
+
+[ext_resource type="Script" path="res://scripts/Users.gd" id="1_xj4f4"]
+[ext_resource type="StyleBox" uid="uid://ch2bgsohjbboi" path="res://Styles/Panel.tres" id="2_6rilf"]
+[ext_resource type="Script" path="res://scripts/Keypad.gd" id="3_uctjh"]
+[ext_resource type="StyleBox" uid="uid://1dle2f268d87" path="res://Styles/spacer.tres" id="4_xenwj"]
+[ext_resource type="Texture2D" uid="uid://t8f80xfj70f1" path="res://img/circle-dot-inactive.png" id="5_opmhr"]
+[ext_resource type="Texture2D" uid="uid://daudnq51hys0d" path="res://img/cancel.png" id="6_vsnbx"]
+[ext_resource type="Texture2D" uid="uid://d0cjbo087854b" path="res://img/cancel_click.png" id="7_3mmqx"]
+[ext_resource type="Texture2D" uid="uid://c1j780vfmxcd8" path="res://img/cancel_hover.png" id="8_c6n5c"]
+[ext_resource type="Texture2D" uid="uid://dh04clyb1t2ar" path="res://img/delete.png" id="9_a4yhv"]
+[ext_resource type="Texture2D" uid="uid://4qq482lciltl" path="res://img/delete_click.png" id="10_lw1vi"]
+[ext_resource type="Texture2D" uid="uid://d2m0ost5a1vrl" path="res://img/delete_hover.png" id="11_5muvg"]
+[ext_resource type="Script" path="res://scripts/Ordering.gd" id="12_22q02"]
+[ext_resource type="PackedScene" uid="uid://psaq8n0lrxgw" path="res://scenes/panel.tscn" id="13_1rjla"]
+[ext_resource type="Script" path="res://scripts/Multiplier.gd" id="14_36lwu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jyygq"]
+font_size = 52
+font_color = Color(0.784314, 0.784314, 0.784314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lcs8d"]
+bg_color = Color(0.0941176, 0.0941176, 0.0941176, 0.788235)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3572j"]
+bg_color = Color(0.254902, 0.254902, 0.254902, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vagtv"]
+bg_color = Color(0.552941, 0.552941, 0.552941, 0.180392)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gnxhm"]
+bg_color = Color(0.658824, 0.658824, 0.658824, 0.541176)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ociuq"]
+bg_color = Color(0, 0, 0, 0.298039)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="InputEventKey" id="InputEventKey_p2o4t"]
+device = -1
+keycode = 4194439
+unicode = 49
+
+[sub_resource type="InputEventKey" id="InputEventKey_h20bm"]
+device = -1
+keycode = 49
+unicode = 49
+
+[sub_resource type="Shortcut" id="Shortcut_7qoj5"]
+events = [SubResource("InputEventKey_p2o4t"), SubResource("InputEventKey_h20bm")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_qg8ay"]
+device = -1
+keycode = 4194440
+unicode = 50
+
+[sub_resource type="InputEventKey" id="InputEventKey_qy37e"]
+device = -1
+keycode = 50
+unicode = 50
+
+[sub_resource type="Shortcut" id="Shortcut_112ow"]
+events = [SubResource("InputEventKey_qg8ay"), SubResource("InputEventKey_qy37e")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_tb5bv"]
+device = -1
+keycode = 4194441
+unicode = 51
+
+[sub_resource type="InputEventKey" id="InputEventKey_g14hj"]
+device = -1
+keycode = 51
+unicode = 51
+
+[sub_resource type="Shortcut" id="Shortcut_dv2dq"]
+events = [SubResource("InputEventKey_tb5bv"), SubResource("InputEventKey_g14hj")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_27usq"]
+device = -1
+keycode = 4194442
+unicode = 52
+
+[sub_resource type="InputEventKey" id="InputEventKey_b1nsd"]
+device = -1
+keycode = 52
+unicode = 52
+
+[sub_resource type="Shortcut" id="Shortcut_oufwh"]
+events = [SubResource("InputEventKey_27usq"), SubResource("InputEventKey_b1nsd")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_oaqgm"]
+device = -1
+keycode = 4194443
+unicode = 53
+
+[sub_resource type="InputEventKey" id="InputEventKey_ugtk4"]
+device = -1
+keycode = 53
+unicode = 53
+
+[sub_resource type="Shortcut" id="Shortcut_1emam"]
+events = [SubResource("InputEventKey_oaqgm"), SubResource("InputEventKey_ugtk4")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_pdyll"]
+device = -1
+keycode = 4194444
+unicode = 54
+
+[sub_resource type="InputEventKey" id="InputEventKey_mv51n"]
+device = -1
+keycode = 54
+unicode = 54
+
+[sub_resource type="Shortcut" id="Shortcut_vifmi"]
+events = [SubResource("InputEventKey_pdyll"), SubResource("InputEventKey_mv51n")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_k204m"]
+device = -1
+keycode = 4194445
+unicode = 55
+
+[sub_resource type="InputEventKey" id="InputEventKey_egy2k"]
+device = -1
+keycode = 55
+unicode = 55
+
+[sub_resource type="Shortcut" id="Shortcut_d7dby"]
+events = [SubResource("InputEventKey_k204m"), SubResource("InputEventKey_egy2k")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_2hp1r"]
+device = -1
+keycode = 4194446
+unicode = 56
+
+[sub_resource type="InputEventKey" id="InputEventKey_wy5bf"]
+device = -1
+keycode = 56
+unicode = 56
+
+[sub_resource type="Shortcut" id="Shortcut_e8gra"]
+events = [SubResource("InputEventKey_2hp1r"), SubResource("InputEventKey_wy5bf")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_sdtjq"]
+device = -1
+keycode = 4194447
+unicode = 57
+
+[sub_resource type="InputEventKey" id="InputEventKey_7ce10"]
+device = -1
+keycode = 57
+unicode = 57
+
+[sub_resource type="Shortcut" id="Shortcut_eads2"]
+events = [SubResource("InputEventKey_sdtjq"), SubResource("InputEventKey_7ce10")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_vm6a6"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_d1fom"]
+events = [SubResource("InputEventKey_vm6a6")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_3kk76"]
+device = -1
+keycode = 4194438
+unicode = 48
+
+[sub_resource type="InputEventKey" id="InputEventKey_k3gar"]
+device = -1
+keycode = 48
+unicode = 48
+
+[sub_resource type="Shortcut" id="Shortcut_sby8t"]
+events = [SubResource("InputEventKey_3kk76"), SubResource("InputEventKey_k3gar")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_g5owl"]
+device = -1
+keycode = 4194308
+
+[sub_resource type="Shortcut" id="Shortcut_u7isy"]
+events = [SubResource("InputEventKey_g5owl")]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xj4f4")
+
+[node name="Main" type="Panel" parent="."]
+visible = false
+layout_mode = 2
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_styles/panel = ExtResource("2_6rilf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Top_Bar" type="Control" parent="Main/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main/VBoxContainer/Top_Bar"]
+layout_mode = 2
+offset_right = 1920.0
+offset_bottom = 82.0
+theme_override_constants/separation = 0
+
+[node name="Made_By" type="Control" parent="Main/VBoxContainer/Top_Bar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Shameless_Promotion" type="Label" parent="Main/VBoxContainer/Top_Bar/HBoxContainer/Made_By"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.235294, 0.235294, 0.235294, 1)
+text = "Created by: Brendan Goyer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Company_Name" type="Control" parent="Main/VBoxContainer/Top_Bar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="Label" type="Label" parent="Main/VBoxContainer/Top_Bar/HBoxContainer/Company_Name"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "AJ's Bar and Grill"
+label_settings = SubResource("LabelSettings_jyygq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Version" type="Control" parent="Main/VBoxContainer/Top_Bar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main/VBoxContainer/Top_Bar/HBoxContainer/Version"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Version" type="Label" parent="Main/VBoxContainer/Top_Bar/HBoxContainer/Version/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.352941, 0.352941, 0.352941, 1)
+text = "Version:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Version_Number" type="Label" parent="Main/VBoxContainer/Top_Bar/HBoxContainer/Version/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.352941, 0.352941, 0.352941, 1)
+text = "0.0.1"
+vertical_alignment = 1
+
+[node name="User_Panel" type="Control" parent="Main/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 12.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main/VBoxContainer/User_Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Users" type="Control" parent="Main/VBoxContainer/User_Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.39
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Main/VBoxContainer/User_Panel/HBoxContainer/Users"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="GridContainer" type="GridContainer" parent="Main/VBoxContainer/User_Panel/HBoxContainer/Users/ScrollContainer"]
+clip_contents = true
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 5
+
+[node name="Keypad" type="Panel" parent="."]
+visible = false
+layout_mode = 2
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lcs8d")
+script = ExtResource("3_uctjh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Keypad"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Spacer" type="Control" parent="Keypad/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Control" parent="Keypad/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Keypad/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Spacer" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Spacer_L" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Key_Pad_Container" type="Panel" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3572j")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spacer_Top" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.01
+
+[node name="Indicators" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Indicators"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spacer_Top" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Indicators/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.13
+
+[node name="Pass_Indicator" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Indicators/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Indicators/VBoxContainer/Pass_Indicator"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spacer_L" type="Panel" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Indicators/VBoxContainer/Pass_Indicator/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.75
+theme_override_styles/panel = ExtResource("4_xenwj")
+
+[node name="Char_1" type="Panel" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Indicators/VBoxContainer/Pass_Indicator/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_styles/panel = ExtResource("4_xenwj")
+metadata/active = false
+
+[node name="TextureRect" type="TextureRect" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Indicators/VBoxContainer/Pass_Indicator/HBoxContainer/Char_1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_opmhr")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Char_2" type="Panel" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Indicators/VBoxContainer/Pass_Indicator/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_styles/panel = ExtResource("4_xenwj")
+metadata/active = false
+
+[node name="TextureRect" type="TextureRect" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Indicators/VBoxContainer/Pass_Indicator/HBoxContainer/Char_2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_opmhr")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Char_3" type="Panel" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Indicators/VBoxContainer/Pass_Indicator/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_styles/panel = ExtResource("4_xenwj")
+metadata/active = false
+
+[node name="TextureRect" type="TextureRect" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Indicators/VBoxContainer/Pass_Indicator/HBoxContainer/Char_3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_opmhr")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Char_4" type="Panel" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Indicators/VBoxContainer/Pass_Indicator/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_styles/panel = ExtResource("4_xenwj")
+metadata/active = false
+
+[node name="TextureRect" type="TextureRect" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Indicators/VBoxContainer/Pass_Indicator/HBoxContainer/Char_4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_opmhr")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Char_5" type="Panel" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Indicators/VBoxContainer/Pass_Indicator/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_styles/panel = ExtResource("4_xenwj")
+metadata/active = false
+
+[node name="TextureRect" type="TextureRect" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Indicators/VBoxContainer/Pass_Indicator/HBoxContainer/Char_5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_opmhr")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Char_6" type="Panel" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Indicators/VBoxContainer/Pass_Indicator/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_styles/panel = ExtResource("4_xenwj")
+metadata/active = false
+
+[node name="TextureRect" type="TextureRect" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Indicators/VBoxContainer/Pass_Indicator/HBoxContainer/Char_6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_opmhr")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Spacer_R" type="Panel" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Indicators/VBoxContainer/Pass_Indicator/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.75
+theme_override_styles/panel = ExtResource("4_xenwj")
+
+[node name="Keypad" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spacer_Top" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Panel5" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spacer_Left" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel5/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Num_1" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel5/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button_1" type="Button" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel5/HBoxContainer/Num_1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_vagtv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gnxhm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ociuq")
+shortcut = SubResource("Shortcut_7qoj5")
+text = "1"
+
+[node name="Num_2" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel5/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button_2" type="Button" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel5/HBoxContainer/Num_2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_vagtv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gnxhm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ociuq")
+shortcut = SubResource("Shortcut_112ow")
+text = "2"
+
+[node name="Num_3" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel5/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button_3" type="Button" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel5/HBoxContainer/Num_3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_vagtv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gnxhm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ociuq")
+shortcut = SubResource("Shortcut_dv2dq")
+text = "3"
+
+[node name="Spacer_Right" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel5/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Panel6" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spacer_Left" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel6/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Num_4" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel6/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button_4" type="Button" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel6/HBoxContainer/Num_4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_vagtv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gnxhm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ociuq")
+shortcut = SubResource("Shortcut_oufwh")
+text = "4"
+
+[node name="Num_5" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel6/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button_5" type="Button" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel6/HBoxContainer/Num_5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_vagtv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gnxhm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ociuq")
+shortcut = SubResource("Shortcut_1emam")
+text = "5"
+
+[node name="Num_6" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel6/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button_6" type="Button" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel6/HBoxContainer/Num_6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_vagtv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gnxhm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ociuq")
+shortcut = SubResource("Shortcut_vifmi")
+text = "6"
+
+[node name="Spacer_Right" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel6/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Panel8" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spacer_Left" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel8/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Num_7" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel8/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button_7" type="Button" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel8/HBoxContainer/Num_7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_vagtv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gnxhm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ociuq")
+shortcut = SubResource("Shortcut_d7dby")
+text = "7"
+
+[node name="Num_8" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel8/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button_8" type="Button" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel8/HBoxContainer/Num_8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_vagtv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gnxhm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ociuq")
+shortcut = SubResource("Shortcut_e8gra")
+text = "8"
+
+[node name="Num_9" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel8/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button_9" type="Button" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel8/HBoxContainer/Num_9"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_vagtv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gnxhm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ociuq")
+shortcut = SubResource("Shortcut_eads2")
+text = "9"
+
+[node name="Spacer_Right" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel8/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Panel7" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spacer_Left" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel7/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Close" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel7/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel7/HBoxContainer/Close"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = -12.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton_Close" type="TextureButton" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel7/HBoxContainer/Close/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+tooltip_text = "bla"
+shortcut = SubResource("Shortcut_d1fom")
+texture_normal = ExtResource("6_vsnbx")
+texture_pressed = ExtResource("7_3mmqx")
+texture_hover = ExtResource("8_c6n5c")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Num_0" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel7/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button_0" type="Button" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel7/HBoxContainer/Num_0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_vagtv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gnxhm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ociuq")
+shortcut = SubResource("Shortcut_sby8t")
+text = "0"
+
+[node name="Delete" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel7/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureButton_Delete" type="TextureButton" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel7/HBoxContainer/Delete"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+shortcut = SubResource("Shortcut_u7isy")
+texture_normal = ExtResource("9_a4yhv")
+texture_pressed = ExtResource("10_lw1vi")
+texture_hover = ExtResource("11_5muvg")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Spacer_Right" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel7/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Spacer_Bottom" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Spacer_Bottom" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.01
+
+[node name="Spacer_R" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Spacer2" type="Control" parent="Keypad/VBoxContainer/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Spacer2" type="Control" parent="Keypad/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="POS_Main_Screen" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_6rilf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="POS_Main_Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Top_Bar" type="Control" parent="POS_Main_Screen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="POS_Main_Screen/VBoxContainer/Top_Bar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="User" type="Control" parent="POS_Main_Screen/VBoxContainer/Top_Bar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="POS_Main_Screen/VBoxContainer/Top_Bar/HBoxContainer/User"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("4_xenwj")
+text = "User"
+
+[node name="Company" type="Control" parent="POS_Main_Screen/VBoxContainer/Top_Bar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="Label" type="Label" parent="POS_Main_Screen/VBoxContainer/Top_Bar/HBoxContainer/Company"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.784314, 0.784314, 0.784314, 1)
+theme_override_font_sizes/font_size = 52
+text = "AJ's Bar and Grill"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings" type="Control" parent="POS_Main_Screen/VBoxContainer/Top_Bar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="POS_Main_Screen/VBoxContainer/Top_Bar/HBoxContainer/Settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("4_xenwj")
+text = "Settings"
+
+[node name="Ordering" type="Control" parent="POS_Main_Screen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 12.0
+script = ExtResource("12_22q02")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="POS_Main_Screen/VBoxContainer/Ordering"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+theme_override_constants/minimum_grab_thickness = 10
+theme_override_constants/autohide = 0
+
+[node name="Control" type="Control" parent="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spacer" type="Control" parent="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" parent="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Control/HBoxContainer" instance=ExtResource("13_1rjla")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 80.0
+
+[node name="Spacer2" type="Control" parent="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Orders" type="Control" parent="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Orders"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spacer" type="Control" parent="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Orders/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Orders/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 80.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Orders/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Orders/HBoxContainer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+text = "Orders"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Orders/HBoxContainer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 12.0
+
+[node name="GridContainer" type="GridContainer" parent="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Orders/HBoxContainer/Panel/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="Control" type="Control" parent="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Orders/HBoxContainer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Multiplier" type="HBoxContainer" parent="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Orders/HBoxContainer/Panel/VBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Plus" type="Button" parent="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Orders/HBoxContainer/Panel/VBoxContainer/Control/Multiplier"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 45
+text = "+"
+
+[node name="Total" type="LineEdit" parent="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Orders/HBoxContainer/Panel/VBoxContainer/Control/Multiplier"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "1"
+alignment = 1
+max_length = 2
+virtual_keyboard_type = 2
+shortcut_keys_enabled = false
+select_all_on_focus = true
+script = ExtResource("14_36lwu")
+
+[node name="Minus" type="Button" parent="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Orders/HBoxContainer/Panel/VBoxContainer/Control/Multiplier"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 45
+text = "-"
+
+[node name="Spacer2" type="Control" parent="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Orders/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Customer" type="Control" parent="POS_Main_Screen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.5
+
+[connection signal="init" from="." to="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Control/HBoxContainer/Panel" method="_on_control_init"]
+[connection signal="password_incorrect" from="." to="Keypad" method="_on_control_password_incorrect"]
+[connection signal="password_complete" from="Keypad" to="." method="_on_keypad_password_complete"]
+[connection signal="pressed" from="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel5/HBoxContainer/Num_1/Button_1" to="Keypad" method="_on_button_1_pressed"]
+[connection signal="pressed" from="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel5/HBoxContainer/Num_2/Button_2" to="Keypad" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel5/HBoxContainer/Num_3/Button_3" to="Keypad" method="_on_button_3_pressed"]
+[connection signal="pressed" from="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel6/HBoxContainer/Num_4/Button_4" to="Keypad" method="_on_button_4_pressed"]
+[connection signal="pressed" from="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel6/HBoxContainer/Num_5/Button_5" to="Keypad" method="_on_button_5_pressed"]
+[connection signal="pressed" from="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel6/HBoxContainer/Num_6/Button_6" to="Keypad" method="_on_button_6_pressed"]
+[connection signal="pressed" from="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel8/HBoxContainer/Num_7/Button_7" to="Keypad" method="_on_button_7_pressed"]
+[connection signal="pressed" from="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel8/HBoxContainer/Num_8/Button_8" to="Keypad" method="_on_button_8_pressed"]
+[connection signal="pressed" from="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel8/HBoxContainer/Num_9/Button_9" to="Keypad" method="_on_button_9_pressed"]
+[connection signal="pressed" from="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel7/HBoxContainer/Close/MarginContainer/TextureButton_Close" to="Keypad" method="_on_texture_button_close_pressed"]
+[connection signal="pressed" from="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel7/HBoxContainer/Num_0/Button_0" to="Keypad" method="_on_button_0_pressed"]
+[connection signal="pressed" from="Keypad/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/Key_Pad_Container/VBoxContainer/Keypad/VBoxContainer/Panel7/HBoxContainer/Delete/TextureButton_Delete" to="Keypad" method="_on_texture_button_delete_pressed"]
+[connection signal="add_to_cart" from="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Control/HBoxContainer/Panel" to="POS_Main_Screen/VBoxContainer/Ordering" method="_on_panel_add_to_cart"]
+[connection signal="button_up" from="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Orders/HBoxContainer/Panel/VBoxContainer/Control/Multiplier/Plus" to="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Orders/HBoxContainer/Panel/VBoxContainer/Control/Multiplier/Total" method="_on_plus_button_up"]
+[connection signal="text_changed" from="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Orders/HBoxContainer/Panel/VBoxContainer/Control/Multiplier/Total" to="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Orders/HBoxContainer/Panel/VBoxContainer/Control/Multiplier/Total" method="_on_text_changed"]
+[connection signal="text_submitted" from="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Orders/HBoxContainer/Panel/VBoxContainer/Control/Multiplier/Total" to="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Orders/HBoxContainer/Panel/VBoxContainer/Control/Multiplier/Total" method="_on_text_submitted"]
+[connection signal="button_up" from="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Orders/HBoxContainer/Panel/VBoxContainer/Control/Multiplier/Minus" to="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Orders/HBoxContainer/Panel/VBoxContainer/Control/Multiplier/Total" method="_on_minus_button_up"]
