@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://cljocsb0t3t8h"]
+[gd_scene load_steps=56 format=3 uid="uid://cljocsb0t3t8h"]
 
 [ext_resource type="Script" path="res://scripts/Users.gd" id="1_xj4f4"]
 [ext_resource type="StyleBox" uid="uid://ch2bgsohjbboi" path="res://Styles/Panel.tres" id="2_6rilf"]
@@ -193,6 +193,8 @@ keycode = 4194308
 
 [sub_resource type="Shortcut" id="Shortcut_u7isy"]
 events = [SubResource("InputEventKey_g5owl")]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dc254"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -1091,11 +1093,12 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 12.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dc254")
 
 [node name="GridContainer" type="GridContainer" parent="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Orders/HBoxContainer/Panel/VBoxContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_vertical = 2
 size_flags_stretch_ratio = 10.0
 
 [node name="Control" type="Control" parent="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Orders/HBoxContainer/Panel/VBoxContainer"]
