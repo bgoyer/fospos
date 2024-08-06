@@ -1,53 +1,98 @@
 extends Node
 
+
 var database = {
-	users = 
-		{
+	users = {
+		user_id = {
 			name = "John Doe",
-			pin = 124085
-		},
-	menu = 
-	[	
-		{
-			name = "Beer",
-			children = [
-				{
-					name = "Lager",
-					children = [
-						{
-							name = "Bud Light",
-							price = 8.50
-						},
-						{
-							name = "White Claw",
-							price = 9.50
+			pin = 124085, #TODO Encrypt this
+			active_tickets = {
+				ticket_id = {
+					cart = {
+						item_id = {
+							quantity = 1,
+							options = {
+								option_1 = false,
+								option_2 = false,
+								option_3 = true
+							}
 						}
-					]
+					},
+					payment_method = "credit",
+					sub_total = 9.5,
+					tips = 0.0
 				}
-			]
-		},
-		{
-			name = "Food",
-			children = [
-				{
-					name = "Burger",
-					children = [
-						{
-							name = "Cheese Burger",
-							price = 13.75
-						},
-						{
-							name = "Hamburger",
-							price = 15.50
-						}
-					]
+			},
+			pay_period_time = 0,
+			shift_time = 0,
+			admin_notes = {
+				note_1 = {
+					note = "Failed to show up to work",
+					date = "6/1/15",
+					points = 4
+				},
+				note_2 = {
+					note = "Stayed late to help the team",
+					date = "6/12/15",
+					points = 0
 				}
-			],	
+			}
 		}
-		
-	
-		
-	]
+	},
+ 
+	menu =
+	{
+		beer = {
+			name = "Beer",
+			children = {
+				lager = {
+				name = "Lager",
+					children = {
+						bud_light = {
+							name = "Bud Light",
+							price = 8.50,
+							options = {
+								"toggle" = {},
+
+							}
+						},
+						white_claw = {
+							name = "White Claw",
+							price = 9.50,
+							options = {
+
+							}
+						}
+					}
+				}
+			}
+		},
+		food = {
+		name = "Food",
+			children = {
+				burger = {
+					name = "Burger",
+					children = {
+						cheese_burger = {
+						name = "Cheese Burger",
+						price = 13.75
+						},
+						hamburger = {
+						name = "Hamburger",
+						price = 15.50
+						}
+					}
+				}
+			}
+		}
+	},
+	config = {
+		pip = false,
+		add_tax = false,
+		require_emp_state_tips = true,
+		emp_break_tracking = true,
+		emp_time_tracking = true
+	}
 }
 
 
@@ -67,7 +112,8 @@ var order_screen_data
 @onready var user_template = preload("res://scenes/user_template.tscn")
 
 func _ready():
-	init.emit(database)	
+	init.emit(database)
+	
 
 ######Order Screen######
 func load_order_screen():

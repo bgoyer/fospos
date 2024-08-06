@@ -1098,8 +1098,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_dc254")
 [node name="GridContainer" type="GridContainer" parent="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Orders/HBoxContainer/Panel/VBoxContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 2
-size_flags_stretch_ratio = 10.0
+size_flags_vertical = 0
 
 [node name="Control" type="Control" parent="POS_Main_Screen/VBoxContainer/Ordering/HSplitContainer/Orders/HBoxContainer/Panel/VBoxContainer"]
 layout_mode = 2

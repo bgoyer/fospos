@@ -7,13 +7,14 @@ func _on_control_init(data):
 		printerr("Data is null")
 		pass
 	for category in data.menu:
+		category = data.menu[category]
 		var cat_btn = Button.new()
-
 		cat_btn.text = category.name
 		cat_btn.set("theme_override_font_sizes/font_size", 30)
 		cat_btn.set_custom_minimum_size(Vector2(0 , 50))
 		$"HBoxContainer/Categories/CategoryButtonContainer".add_child(cat_btn)
 		for subcat in category.children:
+			subcat = category.children[subcat]
 			var stylebox: StyleBoxFlat = StyleBoxFlat.new()
 			stylebox.bg_color = Color.GRAY
 			
@@ -33,6 +34,7 @@ func _on_control_init(data):
 			#create title label subcat.name
 			#create grid with btn from subcat.children
 			for item in subcat.children:
+				item = subcat.children[item]
 				var item_btn = Button.new()
 				item_btn.text = item.name
 				item_btn.focus_mode = Control.FOCUS_NONE
