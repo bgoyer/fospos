@@ -206,7 +206,6 @@ grow_vertical = 2
 script = ExtResource("1_xj4f4")
 
 [node name="Main" type="Panel" parent="."]
-visible = false
 layout_mode = 2
 offset_right = 1920.0
 offset_bottom = 1080.0
@@ -930,6 +929,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="POS_Main_Screen" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

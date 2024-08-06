@@ -100,6 +100,7 @@ var database = {
 
 
 
+
 signal  password_incorrect
 signal  init
 
@@ -112,9 +113,7 @@ var order_screen_data
 @onready var user_template = preload("res://scenes/user_template.tscn")
 
 func _ready():
-	init.emit(database)
-	
-
+	pass
 ######Order Screen######
 func load_order_screen():
 	pass
@@ -126,7 +125,8 @@ func show_login(username):
 
 ########################
 
-######Server Commands########
+######Server Communication########
+
 func sync_user_list(user_list):
 	for i in user_list.size():
 		var temp_user_template = user_template.instantiate()
@@ -139,32 +139,33 @@ func sync_user_list(user_list):
 			button.text += split_text[0].split("")[0].to_upper()
 			button.pressed.connect(self.show_login.bind(user_list[i]))
 
-
-
 func password_incorrect_server_response():
 	password_incorrect.emit()
 	
-
 func password_correct_server_response():
 	$"Main".visible = false
 	$"Keypad".visible = false
+	init.emit(database)
 	await load_order_screen()
 	$"POS_Main_Screen".visible = true	
 
 func set_password(_password):
 	pass
 	
-func try_password(_username, _password):
-	pass
 	
 
 func get_order_screen_data(data):
 	order_screen_data = data
-
 
 func send_order(_order_data):
 	pass
 	
 #################################
 
+########################Server Temp stuff so i can test
+signal try_pass
 
+
+
+
+########################################################
