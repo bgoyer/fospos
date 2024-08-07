@@ -15,7 +15,7 @@ func _on_control_init(data):
 		$"HBoxContainer/Categories/CategoryButtonContainer".add_child(cat_btn)
 		for subcat in category.children:
 			subcat = category.children[subcat]
-			var stylebox: StyleBoxFlat = StyleBoxFlat.new()
+			var stylebox:StyleBoxFlat = StyleBoxFlat.new()
 			stylebox.bg_color = Color.GRAY
 			
 			var grid = VBoxContainer.new()

@@ -2,7 +2,7 @@ extends LineEdit
 
 var current_text = "1"
 
-@onready var line_edit: LineEdit = $"."
+@onready var line_edit:LineEdit = $"."
 
 func _on_text_changed(new_text):
 	if not new_text == "":

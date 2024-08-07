@@ -14,7 +14,7 @@ var indicator_4
 var indicator_5
 var indicator_6
 
-var current_password: String = "":
+var current_password:String = "":
 	set(value):
 		current_password = value
 		password_changed.emit()
@@ -48,7 +48,7 @@ func password_has_changed():
 				reset_indictors()
 				indicator_1.texture = indicator_active
 				indicator_2.texture = indicator_active
-			3: 
+			3:
 				reset_indictors()
 				indicator_1.texture = indicator_active
 				indicator_2.texture = indicator_active
@@ -74,7 +74,7 @@ func password_has_changed():
 				indicator_4.texture = indicator_active
 				indicator_5.texture = indicator_active
 				indicator_6.texture = indicator_active
-				password_complete.emit(current_password)
+				password_complete.emit(current_password.to_int())
 
 func reset_indictors():
 	indicator_1.texture = indicator_inactive
