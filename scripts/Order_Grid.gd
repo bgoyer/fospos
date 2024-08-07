@@ -41,7 +41,6 @@ func _on_control_init(data):
 				item_btn.set("theme_override_font_sizes/font_size", 30)
 				item_btn.connect("pressed", item_pressed.bind(item))
 				item_button_grid.add_child(item_btn)
-				
 
 func item_pressed(item):
 	add_to_cart.emit(item)	

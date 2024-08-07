@@ -36,7 +36,6 @@ func _ready():
 	password_changed.connect(password_has_changed)
 
 func password_has_changed():
-	print(current_password)
 	var pass_length = current_password.length()
 	if pass_length <= 6:
 		match pass_length:
@@ -76,7 +75,6 @@ func password_has_changed():
 				indicator_5.texture = indicator_active
 				indicator_6.texture = indicator_active
 				password_complete.emit(current_password)
-		
 
 func reset_indictors():
 	indicator_1.texture = indicator_inactive

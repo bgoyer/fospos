@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://cljocsb0t3t8h"]
+[gd_scene load_steps=57 format=3 uid="uid://cljocsb0t3t8h"]
 
 [ext_resource type="Script" path="res://scripts/Users.gd" id="1_xj4f4"]
 [ext_resource type="StyleBox" uid="uid://ch2bgsohjbboi" path="res://Styles/Panel.tres" id="2_6rilf"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://4qq482lciltl" path="res://img/delete_click.png" id="10_lw1vi"]
 [ext_resource type="Texture2D" uid="uid://d2m0ost5a1vrl" path="res://img/delete_hover.png" id="11_5muvg"]
 [ext_resource type="Script" path="res://scripts/Ordering.gd" id="12_22q02"]
+[ext_resource type="Script" path="res://scripts/POS_Main_Screen.gd" id="12_n5h7p"]
 [ext_resource type="PackedScene" uid="uid://psaq8n0lrxgw" path="res://scenes/panel.tscn" id="13_1rjla"]
 [ext_resource type="Script" path="res://scripts/Multiplier.gd" id="14_36lwu"]
 
@@ -206,6 +207,7 @@ grow_vertical = 2
 script = ExtResource("1_xj4f4")
 
 [node name="Main" type="Panel" parent="."]
+visible = false
 layout_mode = 2
 offset_right = 1920.0
 offset_bottom = 1080.0
@@ -929,7 +931,6 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="POS_Main_Screen" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -937,6 +938,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("2_6rilf")
+script = ExtResource("12_n5h7p")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="POS_Main_Screen"]
 layout_mode = 1
@@ -963,7 +965,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="POS_Main_Screen/VBoxContainer/Top_Bar/HBoxContainer/User"]
+[node name="Button" type="OptionButton" parent="POS_Main_Screen/VBoxContainer/Top_Bar/HBoxContainer/User"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -973,7 +975,8 @@ grow_vertical = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("4_xenwj")
-text = "User"
+toggle_mode = false
+alignment = 1
 
 [node name="Company" type="Control" parent="POS_Main_Screen/VBoxContainer/Top_Bar/HBoxContainer"]
 layout_mode = 2
