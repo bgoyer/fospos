@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fospos-api.server", "fospos-api.Server\fospos-api.server.csproj", "{CDEEDE67-9EDC-457D-BCEB-4010B4BFABC9}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "fospos-api.client", "fospos-api.client\fospos-api.client.esproj", "{14E0B329-4378-427D-AC4E-C7666883EE47}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDEEDE67-9EDC-457D-BCEB-4010B4BFABC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDEEDE67-9EDC-457D-BCEB-4010B4BFABC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDEEDE67-9EDC-457D-BCEB-4010B4BFABC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDEEDE67-9EDC-457D-BCEB-4010B4BFABC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14E0B329-4378-427D-AC4E-C7666883EE47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14E0B329-4378-427D-AC4E-C7666883EE47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14E0B329-4378-427D-AC4E-C7666883EE47}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{14E0B329-4378-427D-AC4E-C7666883EE47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14E0B329-4378-427D-AC4E-C7666883EE47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14E0B329-4378-427D-AC4E-C7666883EE47}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {35EA6856-107A-4462-BF46-068CD589C312}
+	EndGlobalSection
+EndGlobal
