@@ -55,6 +55,8 @@ public static class OrdersController {
     {
         if (await db.Orders.FindAsync(id) is Order order)
         {
+            
+
             db.Orders.Remove(order);
             await db.SaveChangesAsync();
             return TypedResults.NoContent();
