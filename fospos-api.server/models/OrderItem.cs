@@ -1,6 +1,11 @@
-public class OrderItem
+namespace FosposApi.Server.Models
 {
-    public int Id { get; set; }
-    public ItemDetail? Item { get; set; } 
-    public List<ItemOption>? Options { get; } = new List<ItemOption>();
+    public class OrderItem
+    {
+        public int Id { get; set; }
+        
+        public int ItemId { get; set; }
+        public int Quantity { get; set; }
+
+    }
 }

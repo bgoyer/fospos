@@ -1,3 +1,6 @@
+using FosposApi.Server.Controllers;
+using FosposApi.Server.Database;
+using FosposApi.Server.Models;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -41,8 +44,11 @@ try
     app.UseHttpsRedirection();
 
     // Register controllers
-    ItemDetailsController.Configure(app);
+    CategoryController.Configure(app);
+    ItemsController.Configure(app);
+    ItemOptionsController.Configure(app);
     OrdersController.Configure(app);
+    SubcategoryController.Configure(app);
     UsersController.Configure(app);
 
     app.Run();

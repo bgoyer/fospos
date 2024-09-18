@@ -1,6 +1,6 @@
-namespace FosposApi.Server.Models
+﻿namespace FosposApi.Server.Models
 {
-    public class User
+    public class Category
     {
         public required int Id { get; set; }
         public required string Name { get; set; }
