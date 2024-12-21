@@ -1,6 +1,0 @@
-@fospos_api.Server_HostAddress = http://localhost:5263
-
-GET {{fospos_api.Server_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
