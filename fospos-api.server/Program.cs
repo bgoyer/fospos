@@ -47,7 +47,7 @@ try
     builder.WebHost.UseKestrel(options => {
         options.Listen(IPAddress.Any, 8000);
         options.Listen(IPAddress.Any, 8001, opts => {
-            opts.UseHttps("../certs/localhost.pfx", "12345");
+            opts.UseHttps("./publish/localhost.pfx", "12345");
         });
     });
 
