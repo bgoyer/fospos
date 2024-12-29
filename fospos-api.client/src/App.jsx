@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 
+const productUrl = getApiUrl('/api/Products');
+
 const App = () => {
-    const [data, setData] = useState(null);
+    const [data, setData] = useState([]);
 
     useEffect(() => {
         const go = async () => {
@@ -27,3 +29,7 @@ const App = () => {
 }
 
 export default App;
+
+function getApiUrl(path) {
+    return import.meta.env.DEV ? `https://0.0.0.0:8001/${path}` : `/${path}`;
+}
