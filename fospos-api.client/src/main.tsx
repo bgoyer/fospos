@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 
 import AdminDashboard from "./views/AdminDashboard";
 import PosDashboard from "./views/PosDashboard";
+import KitchenDisplay from "./views/KithenDisplay";
 
 import "./index.css";
 
@@ -16,6 +17,7 @@ root.render(
       <Routes>
         <Route path="/" element={<AdminDashboard />} />
         <Route path="/pos" element={<PosDashboard />} />
+        <Route path="/kitchen" element={<KitchenDisplay/>} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
