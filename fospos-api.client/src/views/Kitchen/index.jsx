@@ -3,7 +3,7 @@ import "./styles.css";
 
 const productUrl = getApiUrl("/api/Products");
 
-const AdminDashboard = () => {
+const Kitchen = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const AdminDashboard = () => {
 
   return (
     <div>
-      <h1>Plop</h1>
+      <h1>Kitchen</h1>
       {data.map((item) => (
         <div key={item.id}>
           <h2>{item.name}</h2>
@@ -28,7 +28,7 @@ const AdminDashboard = () => {
   );
 };
 
-export default AdminDashboard;
+export default Kitchen;
 
 function getApiUrl(path) {
   return import.meta.env.DEV ? `https://0.0.0.0:8001/${path}` : `/${path}`;

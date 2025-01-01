@@ -3,9 +3,10 @@ import { createRoot } from "react-dom/client";
 
 import { BrowserRouter, Routes, Route } from "react-router";
 
-import Home from "./views/Home";
-import Admin from "./views/Home/Admin";
-import AdminUsers from "./views/Home/Admin/Users";
+import Layout from "./views/Dashboard/Layout";
+import Home from "./views/Dashboard/Home";
+import Admin from "./views/Dashboard/Home/Admin";
+import AdminUsers from "./views/Dashboard/Home/Admin/Users";
 import Pos from "./views/Pos";
 
 import "./index.css";
@@ -16,7 +17,7 @@ root.render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/">
+        <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="admin">
             <Route index element={<Admin />} />

@@ -17,20 +17,43 @@ const ButtonBase = styled.button`
 const ButtonBasic = styled(ButtonBase)`
   background-color: ${(props) => props.theme.colors.gray4};
   color: ${(props) => props.theme.colors.gray12};
+  &:hover {
+    background-color: ${(props) => props.theme.colors.gray6};
+  }
 `;
 
 const BlueButton = styled(ButtonBase)`
   background-color: ${(props) => props.theme.colors.blue11};
   color: ${(props) => props.theme.colors.gray1};
+  &:hover {
+    background-color: ${(props) => props.theme.colors.blue12};
+  }
+`;
+
+const GreenButton = styled(ButtonBase)`
+  background-color: ${(props) => props.theme.colors.green11};
+  color: ${(props) => props.theme.colors.gray1};
+  &:hover {
+    background-color: ${(props) => props.theme.colors.green12};
+  }
 `;
 
 const RedButton = styled(ButtonBase)`
   background-color: ${(props) => props.theme.colors.red11};
   color: ${(props) => props.theme.colors.gray1};
+  &:hover {
+    background-color: ${(props) => props.theme.colors.red12};
+  }
 `;
 
 export default function ({ color = "base", children, ...props }) {
   const Component =
-    color === "red" ? RedButton : color === "blue" ? BlueButton : ButtonBasic;
+    color === "red"
+      ? RedButton
+      : color === "blue"
+      ? BlueButton
+      : color === "green"
+      ? GreenButton
+      : ButtonBasic;
   return <Component {...props}>{children}</Component>;
 }
