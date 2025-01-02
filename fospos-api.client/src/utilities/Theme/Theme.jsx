@@ -1,4 +1,3 @@
-import { ThemeProvider } from "styled-components";
 import {
   gray,
   blue,
@@ -9,9 +8,10 @@ import {
   redDark,
   greenDark,
 } from "@radix-ui/colors";
+export { ThemeProvider } from "styled-components";
 
 // Create your light theme
-const lightTheme = {
+export const lightTheme = {
   colors: {
     ...gray,
     ...blue,
@@ -21,17 +21,11 @@ const lightTheme = {
 };
 
 // Create your dark theme
-const darkTheme = {
+export const darkTheme = {
   colors: {
     ...grayDark,
     ...blueDark,
     ...redDark,
     ...greenDark,
   },
-};
-
-export default {
-  lightTheme,
-  darkTheme,
-  ThemeProvider,
 };
