@@ -67,3 +67,8 @@
 .customer {
 	background-color: darkgray;
 }
+
+.order-item-template{
+	margin: 1%;
+	aspect-ratio:1/1;
+}
