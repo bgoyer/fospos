@@ -5,8 +5,12 @@ import { BrowserRouter, Routes, Route } from "react-router";
 
 import Layout from "./views/Dashboard/Layout";
 import Home from "./views/Dashboard/Home/Home";
+
 import Admin from "./views/Dashboard/Home/Admin/Admin";
+import AdminProducts from "./views/Dashboard/Home/Admin/Products/Products";
+import AdminSales from "./views/Dashboard/Home/Admin/Sales/Sales";
 import AdminUsers from "./views/Dashboard/Home/Admin/Users/Users";
+
 import Pos from "./views/Pos";
 
 import "./index.css";
@@ -19,8 +23,9 @@ root.render(
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="admin">
-            <Route index element={<Admin />} />
+          <Route path="admin" element={<Admin />}>
+            <Route path="products" element={<AdminProducts />} />
+            <Route path="sales" element={<AdminSales />} />
             <Route path="users" element={<AdminUsers />} />
           </Route>
         </Route>

@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import styled from "styled-components";
 
 const ButtonBase = styled.button`
@@ -15,7 +16,7 @@ const ButtonBase = styled.button`
 `;
 
 const ButtonBasic = styled(ButtonBase)`
-  background-color: ${(props) => props.theme.colors.gray4};
+  background-color: ${(props) => props.theme.colors.gray5};
   color: ${(props) => props.theme.colors.gray12};
   &:hover {
     background-color: ${(props) => props.theme.colors.gray6};
@@ -46,7 +47,7 @@ const RedButton = styled(ButtonBase)`
   }
 `;
 
-export default function ({ color = "base", children, ...props }) {
+const Button = forwardRef(({ color = "base", children, ...props }, ref) => {
   const Component =
     color === "red"
       ? RedButton
@@ -55,5 +56,11 @@ export default function ({ color = "base", children, ...props }) {
       : color === "green"
       ? GreenButton
       : ButtonBasic;
-  return <Component {...props}>{children}</Component>;
-}
+  return (
+    <Component ref={ref} {...props}>
+      {children}
+    </Component>
+  );
+});
+
+export default Button;
