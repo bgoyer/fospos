@@ -15,24 +15,33 @@
 }
 .main {
 	display: grid;
-	grid-template-columns: auto 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
+	height: 90vh;
 }
 .subCategoryContainer {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	color: black;
 	background-color: lightgrey;
-	height: 100%;
-	overflow-y: auto;
+	height: auto;
+	width: 100%;
+	overflow-x: auto;
 }
 .itemListContainer {
 	display: flex;
 	color: black;
-	height: 100%;
+	height: auto;
 	overflow-y: auto;
 	background-color: white;
+	flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
-
+.itemsContainer{
+	display: grid;
+	grid-template-rows: auto auto 1fr;
+	height: 90vh;
+}
 .cartContainer {
 	display: grid;
 	grid-template-rows: auto 1fr auto auto;

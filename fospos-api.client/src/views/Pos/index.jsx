@@ -6,7 +6,12 @@ import { useEffect, useState } from "react";
 
 const Pos = () => {
 
+  const [visibleSubcategories, setVisibleSubcategories] = useState([]);
+  const [visibleProducts, setVisibleProducts] = useState([]);
+  const cartList = []
+
   const [qty, setQty] = useState(1);
+
 
   const handleAddButtonClick = () => {
     setQty(current => current+1);
@@ -50,8 +55,14 @@ const Pos = () => {
     }
     go();
   }, [])
-  const cartList = {}
-  const subcategoryItems = subcategories.map(item => <button>{item.name}</button>)
+  const handleCategoryButtonClick = (id) => () => {
+    const visible = subcategories.filter(s => s.categoryID === id);
+    setVisibleSubcategories(visible);
+  }
+  const handleSubcategoryButtonClick = (id) => () => {
+    const visible = products.filter(s => s.subcategoryID === id);
+    setVisibleProducts(visible);
+  }
 
   return (
     <ThemeProvider theme={lightTheme}>
@@ -59,12 +70,34 @@ const Pos = () => {
         <div className="header">AJ's Bar and Grill</div>
 
         <div className="main">
-          <div className="subCategoryContainer">{subcategoryItems}</div>
-
-          <div className="itemListContainer">
-            <Button className="orderItemTemplate">bleh</Button>
+          <div className="itemsContainer">
+            <div className="categoryContainer">{categories.map(item => <button key={item.id} onClick={handleCategoryButtonClick(item.id)}>{item.name}</button>)}</div>
+            <div className="subCategoryContainer">{visibleSubcategories.map(item => <button key={item.id} onClick={handleSubcategoryButtonClick(item.id)}>{item.name}</button>)}</div>
+            <div className="itemListContainer">
+            {visibleProducts.map(item => <button key={item.id} className="orderItemTemplate">{item.name}</button>)}
+            {visibleProducts.map(item => <button key={item.id} className="orderItemTemplate">{item.name}</button>)}
+            {visibleProducts.map(item => <button key={item.id} className="orderItemTemplate">{item.name}</button>)}
+            {visibleProducts.map(item => <button key={item.id} className="orderItemTemplate">{item.name}</button>)}
+            {visibleProducts.map(item => <button key={item.id} className="orderItemTemplate">{item.name}</button>)}
+            {visibleProducts.map(item => <button key={item.id} className="orderItemTemplate">{item.name}</button>)}
+            {visibleProducts.map(item => <button key={item.id} className="orderItemTemplate">{item.name}</button>)}
+            {visibleProducts.map(item => <button key={item.id} className="orderItemTemplate">{item.name}</button>)}
+            {visibleProducts.map(item => <button key={item.id} className="orderItemTemplate">{item.name}</button>)}
+            {visibleProducts.map(item => <button key={item.id} className="orderItemTemplate">{item.name}</button>)}
+            {visibleProducts.map(item => <button key={item.id} className="orderItemTemplate">{item.name}</button>)}
+            {visibleProducts.map(item => <button key={item.id} className="orderItemTemplate">{item.name}</button>)}
+            {visibleProducts.map(item => <button key={item.id} className="orderItemTemplate">{item.name}</button>)}
+            {visibleProducts.map(item => <button key={item.id} className="orderItemTemplate">{item.name}</button>)}
+            {visibleProducts.map(item => <button key={item.id} className="orderItemTemplate">{item.name}</button>)}
+            {visibleProducts.map(item => <button key={item.id} className="orderItemTemplate">{item.name}</button>)}
+            {visibleProducts.map(item => <button key={item.id} className="orderItemTemplate">{item.name}</button>)}
+            {visibleProducts.map(item => <button key={item.id} className="orderItemTemplate">{item.name}</button>)}
+            {visibleProducts.map(item => <button key={item.id} className="orderItemTemplate">{item.name}</button>)}
+            {visibleProducts.map(item => <button key={item.id} className="orderItemTemplate">{item.name}</button>)}
+            {visibleProducts.map(item => <button key={item.id} className="orderItemTemplate">{item.name}</button>)}
+            </div>
+            
           </div>
-
           <div className="cartContainer">
             <div className="cartTitle">Cart</div>
 
