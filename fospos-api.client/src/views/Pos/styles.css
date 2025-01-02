@@ -1,65 +1,63 @@
 ﻿.page {
-	display: grid;
-	grid-template-rows: 0.5fr 9fr 0.5fr;
-	height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
 }
 .header {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	background-color: darkgray;
-	font-size: 1.5rem;
-	padding: 4px 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: darkgray;
+  font-size: 1.5rem;
+  padding: 4px 24px;
 }
 .main {
-	display: grid;
-	grid-template-columns: 1fr 6fr 3fr;
+  display: grid;
+  grid-template-columns: 1fr 6fr 3fr;
+  height: 100%;
 }
 .subCategoryContainer {
-	color: white;
+  color: white;
 }
 .itemListContainer {
-	overflow-x: wrap;
-	overflow-y: scroll;
-	background-color: white;
-	-ms-overflow-style: none;  /* IE and Edge */
-	scrollbar-width: none;  /* Firefox */
-}
-.itemListContainer::-webkit-scrollbar {
-	display: none;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  background-color: white;
 }
 
 .cartContainer {
-	display: grid;
-	grid-template-rows: auto 1fr auto auto;
-	color: white;
-	background-color: black;
+  display: grid;
+  grid-template-rows: auto 1fr auto auto;
+  color: white;
+  background-color: black;
 }
 .cartTitle {
-	color: white;
-	background-color: lightgray;
-	font-size: 24px;
-	padding: 4px 8px;
+  color: white;
+  background-color: lightgray;
+  font-size: 24px;
+  padding: 4px 8px;
 }
 
 .cartList {
-	overflow-y: scroll;
-	overflow-x: wrap;
-	scroll-behavior: smooth;
-	background-color: gray;
-	-ms-overflow-style: none;  /* IE and Edge */
-	scrollbar-width: none;  /* Firefox */
+  overflow-y: scroll;
+  overflow-x: wrap;
+  scroll-behavior: smooth;
+  background-color: gray;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 .cartList::-webkit-scrollbar {
-	display: none;
+  display: none;
 }
 
 .cartQuantity {
-	background-color: lightgray;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
+  background-color: lightgray;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 .customer {
-	background-color: darkgray;
+  background-color: darkgray;
 }

@@ -1,5 +1,4 @@
 import { Outlet } from "react-router";
-import "./styles.css";
 
 const Admin = () => {
   return (

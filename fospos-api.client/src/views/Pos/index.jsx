@@ -8,7 +8,56 @@ const Pos = () => {
       <div class="main">
         <div class="subCategoryContainer"></div>
 
-        <div class="itemListContainer"></div>
+        <div class="itemListContainer">
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+          <p>Plop plop plop</p>
+        </div>
 
         <div class="cartContainer">
           <div class="cartTitle">Cart</div>

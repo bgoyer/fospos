@@ -4,9 +4,9 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router";
 
 import Layout from "./views/Dashboard/Layout";
-import Home from "./views/Dashboard/Home";
-import Admin from "./views/Dashboard/Home/Admin";
-import AdminUsers from "./views/Dashboard/Home/Admin/Users";
+import Home from "./views/Dashboard/Home/Home";
+import Admin from "./views/Dashboard/Home/Admin/Admin";
+import AdminUsers from "./views/Dashboard/Home/Admin/Users/Users";
 import Pos from "./views/Pos";
 
 import "./index.css";
@@ -29,14 +29,3 @@ root.render(
     </BrowserRouter>
   </StrictMode>
 );
-
-/*
-      <NavLink
-        to="/"
-        className={({ isActive }) =>
-          isActive ? "active" : ""
-        }
-      >
-        Home
-      </NavLink>
-*/
