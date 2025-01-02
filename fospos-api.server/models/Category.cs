@@ -1,8 +1,8 @@
-﻿namespace FosposApi.Server.Models
+namespace FosposApi.Server.Models
 {
     public class Category
     {
-        public required int Id { get; set; }
-        public required string Name { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; } = string.Empty;
     }
 }

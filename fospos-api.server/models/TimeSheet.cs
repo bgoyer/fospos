@@ -1,9 +1,9 @@
-﻿namespace FosposApi.Server.Models
+namespace FosposApi.Server.Models
 {
     public class TimeSheet
     {
-        public int Id { get; set; }
-        public int UserId { get; set; }
+        public int ID { get; set; }
+        public int UserID { get; set; }
         public double DailyHours { get; set; }
         public double PayPeriodHours { get; set; }
         public double YearlyHours { get; set; }
