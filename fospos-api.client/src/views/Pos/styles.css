@@ -1,32 +1,36 @@
 ﻿.page {
-	display: grid;
-	grid-template-rows: 0.5fr 9fr 0.5fr;
 	height: 100%;
+	width: 100%;
+	display: grid;
+	grid-template-rows: 5vh 90vh 5vh;
 }
 .header {
 	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	background-color: darkgray;
-	font-size: 1.5rem;
 	padding: 4px 24px;
+	font-size: 1.5rem;
+    align-items: center;
+	flex-direction: row;
+	justify-content: center;
+	background-color: darkgray;
 }
 .main {
 	display: grid;
-	grid-template-columns: 1fr 6fr 3fr;
+	grid-template-columns: auto 1fr 1fr;
 }
 .subCategoryContainer {
-	color: white;
+	display: flex;
+	flex-direction: column;
+	color: black;
+	background-color: lightgrey;
+	height: 100%;
+	overflow-y: auto;
 }
 .itemListContainer {
-	overflow-x: wrap;
-	overflow-y: scroll;
+	display: flex;
+	color: black;
+	height: 100%;
+	overflow-y: auto;
 	background-color: white;
-	-ms-overflow-style: none;  /* IE and Edge */
-	scrollbar-width: none;  /* Firefox */
-}
-.itemListContainer::-webkit-scrollbar {
-	display: none;
 }
 
 .cartContainer {

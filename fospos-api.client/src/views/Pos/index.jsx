@@ -1,28 +1,33 @@
 import "./styles.css";
+//import { Button } from "@/components";
 
 const Pos = () => {
   return (
     <div className="page">
-      <div class="header">AJ's Bar and Grill</div>
+      <div className="header">AJ's Bar and Grill</div>
 
-      <div class="main">
-        <div class="subCategoryContainer"></div>
+      <div className="main">
+        <div className="subCategoryContainer">
+          
+        </div>
+      
+        <div className="itemListContainer"></div>
 
-        <div class="itemListContainer"></div>
+        <div className="cartContainer">
+          <div className="cartTitle">Cart</div>
 
-        <div class="cartContainer">
-          <div class="cartTitle">Cart</div>
+          <div className="cartList">
+             
+          </div>
 
-          <div class="cartList">cart list</div>
-
-          <div class="cartQuantity">
+          <div className="cartQuantity">
             <button>-</button>
-            <span>3</span>
+            <input value="1" style={{textAlign: "center"}} />
             <button>+</button>
           </div>
         </div>
       </div>
-      <div class="customer">customer</div>
+      <div className="customer">customer</div>
     </div>
   );
 };
