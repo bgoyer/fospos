@@ -1,8 +1,18 @@
-﻿.page {
-	height: 100%;
-	width: 100%;
+﻿:root{
+	--mainViewHeight: 85vh;
+	--headerViewHeight: 5vh;
+	--customerViewHeight: 10vh;
+
+	--itemButtonSize: 10vw;
+
+	--fontSizeButton: 3vw;
+}
+
+.page {
+	height: 100vh;
+	width: 100vw;
 	display: grid;
-	grid-template-rows: 5vh 90vh 5vh;
+	grid-template-rows: var(--headerViewHeight) var(--mainViewHeight) var(--customerViewHeight);
 }
 .header {
 	display: flex;
@@ -16,7 +26,6 @@
 .main {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	height: 90vh;
 }
 .subCategoryContainer {
 	display: flex;
@@ -40,16 +49,19 @@
 .itemsContainer{
 	display: grid;
 	grid-template-rows: auto auto 1fr;
-	height: 90vh;
+	height: var(--mainViewHeight);
 }
 .cartContainer {
 	display: grid;
+	height: var(--mainViewHeight);
 	grid-template-rows: auto 1fr auto auto;
 	color: white;
 	background-color: black;
 }
 .cartTitle {
 	color: white;
+	display: flex;
+	justify-content: space-evenly;
 	background-color: lightgray;
 	font-size: 24px;
 	padding: 4px 8px;
@@ -78,9 +90,11 @@
 }
 
 .orderItemTemplate{
-	display: block;
-	margin: 1%;
-	aspect-ratio: 1/1;
-	width: 15vw;
-	height: 15vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 1%;	
+	font-size: var(--fontSizeButton);
+	width: var(--itemButtonSize);
+	height: var(--itemButtonSize);
 }

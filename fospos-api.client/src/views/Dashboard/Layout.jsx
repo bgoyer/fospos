@@ -5,9 +5,12 @@ import { TipJar } from "@phosphor-icons/react";
 
 import { ThemeSwitcher } from "@/components";
 import { lightTheme, ThemeProvider } from "@/utilities/Theme/Theme";
+import { apiResolver } from "../../utilities/urlHelper";
 
 const Layout = () => {
   const [theme, setTheme] = useState(lightTheme);
+
+console.log(import.meta)
 
   return (
     <ThemeProvider theme={theme}>
@@ -20,7 +23,7 @@ const Layout = () => {
             <NavLink to="/">Home</NavLink>
             <NavLink to="admin">Admin</NavLink>
             <NavLink to="pos">Point of Sale</NavLink>
-            <NavLink to="https://0.0.0.0:7126/swagger" target="_blank">
+            <NavLink to='/swagger' target="_blank">
               API Documentation
             </NavLink>
           </HeaderNav>
