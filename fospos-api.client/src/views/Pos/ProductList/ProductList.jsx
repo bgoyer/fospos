@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
 
-const ProductList = ({ onChange, subcategoryID = null }) => {
+const ProductList = ({ onClick, subcategoryID = null }) => {
     const [products, setProducts] = useState([]);
     const [filtered, setFiltered] = useState([]);
 
-console.log(products)
-
     const handleClick = (product) => () => {
-        if (onChange != null) {
-            onChange(product);
+        if (onClick != null) {
+            onClick(product);
         }
     }
     

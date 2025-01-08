@@ -81,9 +81,8 @@
 
 .cartQuantity {
 	background-color: lightgray;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
+	display: grid;
+	grid-template-columns: 7.5vw 35vw 7.5vw;
 }
 .customer {
 	background-color: darkgray;

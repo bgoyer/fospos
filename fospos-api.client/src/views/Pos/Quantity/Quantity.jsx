@@ -3,18 +3,21 @@ import { useState } from "react";
 
 const Quantity = () => {
   const [qty, setQty] = useState(1);
+  
   const handleAddButtonClick = () => {
-    setQty((current) => current + 1);
+    setQty((current) => (current === 50 ? 50 : current + 1));
   };
+
   const handleMinusButtonClick = () => {
     setQty((current) => (current === 1 ? 1 : current - 1));
   };
+
   const handleQtyChange = (evt) => {
     const value = Number(evt.currentTarget.value);
     setQty(value);
   };
   const verifyQtyChange = () => {
-    setQty(qty > 0 ? qty : 1);
+    setQty(qty < 1 ? 1 : qty > 50 ? 50 : qty);
   };
   return (
     <>

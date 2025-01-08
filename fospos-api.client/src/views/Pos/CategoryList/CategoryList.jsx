@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
-const CategoryList = ({ onChange }) => {
+const CategoryList = ({ onClick }) => {
     const [categories, setCategories] = useState([]);
 
     const handleClick = (item) => () => {
-        if (onChange != null) {
-            onChange(item);
+        if (onClick != null) {
+            onClick(item);
         }
     }
 

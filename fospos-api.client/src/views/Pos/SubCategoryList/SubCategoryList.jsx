@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
-const SubCategoryList = ({ onChange, categoryID = null }) => {
+const SubCategoryList = ({ onClick, categoryID = null }) => {
     const [subcategories, setSubcategories] = useState([]);
     const [filtered, setFiltered] = useState([]);
 
     const handleSubcategoryButtonClick = (item) => () => {
-        if (onChange != null) {
-            onChange(item);
+        if (onClick != null) {
+            onClick(item);
         }
     }
 
