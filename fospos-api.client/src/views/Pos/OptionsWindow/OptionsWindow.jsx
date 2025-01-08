@@ -1,14 +1,18 @@
+import cn from "classnames";
 
-const OptionsWindow = ({item}) => {
-    console.log(item)
-    
-    return(
-        <div className="optionsMenuBackground">
-            <div className="optionsMenuBody">
-                
-            </div>
-        </div>
-    )
-}
+const OptionsWindow = ({ show, item, onClose }) => {
+  console.log(item);
 
-export default OptionsWindow
+  const handleCloseClick = () => {
+    onClose();
+  };
+
+  return (
+    <div className={cn("optionsMenuBackground", { visible: show })}>
+      <div className="optionsMenuBody"></div>
+      <button onClick={handleCloseClick}>Close</button>
+    </div>
+  );
+};
+
+export default OptionsWindow;

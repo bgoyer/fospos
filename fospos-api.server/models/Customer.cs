@@ -1,5 +1,8 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace FosposApi.Server.Models
 {
+    [Table("Customer")]
     public class Customer
     {
         public int ID { get; set; }

@@ -7,8 +7,8 @@ namespace FosposApi.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class OptionsController : GenericController<Option>
+    public class TimeSheetController : GenericController<TimeSheet>
     {
-        public OptionsController(PosDbContext dbContext) : base(dbContext) { }
+        public TimeSheetController(PosDbContext dbContext) : base(dbContext) { }
     }
 }

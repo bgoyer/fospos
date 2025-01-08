@@ -3,32 +3,35 @@ import CategoryList from "./CategoryList/CategoryList";
 import SubCategoryList from "./SubCategoryList/SubCategoryList";
 import ProductList from "./ProductList/ProductList";
 import Quantity from "./Quantity/Quantity";
-import CartList from "./Cart/CartList"
+import CartList from "./Cart/CartList";
 import OptionsWindow from "./OptionsWindow/OptionsWindow";
 
 import "./styles.css";
 import { useEffect, useState } from "react";
 
-const Pos = () => {  
+const Pos = () => {
   const [category, setCategory] = useState(null);
   const [subCategory, setSubCategory] = useState(null);
-  const [optionsWindow, setOptionsWindow] = useState(null)
+  const [optionsWindow, setOptionsWindow] = useState(null);
   const [cart, setCart] = useState([]);
+  const [showOptions, setShowOptions] = useState(false);
 
-  const handleCategoryChange = (item) => setCategory(item);
-  const handleSubCategoryChange = (item) => setSubCategory(item);
-  const handleProductChange = (item) => {
-      document.getElementsByClassName("optionsMenuBackground")[0].style.display = "grid"
-      setOptionsWindow(item);
+  const handleCategoryClick = (item) => {
+    setCategory(item);
+    setSubCategory(null);
+  };
+  const handleSubCategoryClick = (item) => setSubCategory(item);
+
+  const handleProductClick = (item) => {
+    setShowOptions(true);
+    setOptionsWindow(item);
   };
   const handleAddItemToCart = (item) => {
-    setCart(cart => {
-      return [
-        ...cart,
-        item
-      ]
-    })
+    setCart((cart) => {
+      return [...cart, item];
+    });
   };
+
   return (
     <ThemeProvider theme={lightTheme}>
       <div className="page">
@@ -36,9 +39,21 @@ const Pos = () => {
 
         <div className="main">
           <div className="itemsContainer">
-            <div className="categoryContainer"><CategoryList onClick={handleCategoryChange} /></div>
-            <div className="subCategoryContainer"><SubCategoryList onClick={handleSubCategoryChange} categoryID={category?.id} /></div>
-            <div className="itemListContainer"><ProductList onClick={handleProductChange} subcategoryID={subCategory?.id} /></div>
+            <div className="categoryContainer">
+              <CategoryList onClick={handleCategoryClick} />
+            </div>
+            <div className="subCategoryContainer">
+              <SubCategoryList
+                onClick={handleSubCategoryClick}
+                categoryID={category?.id}
+              />
+            </div>
+            <div className="itemListContainer">
+              <ProductList
+                onClick={handleProductClick}
+                subCategoryID={subCategory?.id}
+              />
+            </div>
           </div>
           <div className="cartContainer">
             <div className="cartTitle">Cart</div>
@@ -54,7 +69,12 @@ const Pos = () => {
         </div>
         <div className="customer">customer</div>
       </div>
-      <OptionsWindow onSubmit={handleAddItemToCart} item={optionsWindow}/>
+      <OptionsWindow
+        show={showOptions}
+        onSubmit={handleAddItemToCart}
+        onClose={() => setShowOptions(false)}
+        item={optionsWindow}
+      />
     </ThemeProvider>
   );
 };

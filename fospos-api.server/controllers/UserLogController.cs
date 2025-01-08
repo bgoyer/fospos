@@ -7,8 +7,8 @@ namespace FosposApi.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SalesController : GenericController<Sale>
+    public class UserLogController : GenericController<UserLog>
     {
-        public SalesController(PosDbContext dbContext) : base(dbContext) { }
+        public UserLogController(PosDbContext dbContext) : base(dbContext) { }
     }
 }

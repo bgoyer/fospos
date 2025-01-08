@@ -1,5 +1,8 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace FosposApi.Server.Models
 {
+    [Table("TimeSheet")]
     public class TimeSheet
     {
         public int ID { get; set; }

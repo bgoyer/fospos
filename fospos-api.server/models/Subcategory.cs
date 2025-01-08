@@ -1,6 +1,9 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace FosposApi.Server.Models
 {
-    public class Subcategory
+    [Table("SubCategory")]
+    public class SubCategory
     {
         public int ID { get; set; }
         public string Name { get; set; } = string.Empty;
