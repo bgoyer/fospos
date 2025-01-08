@@ -16,7 +16,6 @@ import Pos from "./views/Pos";
 import "./index.css";
 
 const root = createRoot(document.getElementById("root") as HTMLDivElement);
-
 root.render(
   <StrictMode>
     <BrowserRouter>

@@ -1,91 +1,60 @@
 import { lightTheme, ThemeProvider } from "@/utilities/Theme/Theme";
-import { Button } from "@/components";
+import CategoryList from "./CategoryList/CategoryList";
+import SubCategoryList from "./SubCategoryList/SubCategoryList";
+import ProductList from "./ProductList/ProductList";
+import Quantity from "./Quantity/Quantity";
+import CartList from "./Cart/CartList"
+import OptionsWindow from "./OptionsWindow/OptionsWindow";
 
 import "./styles.css";
 import { useEffect, useState } from "react";
 
-const Pos = () => {
-  const [qty, setQty] = useState(1);
+const Pos = () => {  
+  const [category, setCategory] = useState(null);
+  const [subCategory, setSubCategory] = useState(null);
+  const [optionsWindow, setOptionsWindow] = useState(null)
+  const [cart, setCart] = useState([]);
 
-  const handleAddButtonClick = () => {
-    setQty((current) => current + 1);
+  const handleCategoryChange = (item) => setCategory(item);
+  const handleSubCategoryChange = (item) => setSubCategory(item);
+  const handleProductChange = (item) => {
+      document.getElementsByClassName("optionsMenuBackground")[0].style.display = "grid"
+      setOptionsWindow(item);
   };
-
-  const handleMinusButtonClick = () => {
-    setQty((current) => (current === 1 ? 1 : current - 1));
+  const handleAddItemToCart = (item) => {
+    setCart(cart => {
+      return [
+        ...cart,
+        item
+      ]
+    })
   };
-  const handleQtyChange = (evt) => {
-    const value = Number(evt.currentTarget.value);
-    setQty(value);
-  };
-  const verifyQtyChange = () => {
-    setQty(qty > 0 ? qty : 1);
-  };
-  const [products, setProducts] = useState([]);
-  const [categories, setCategories] = useState([]);
-  const [subcategories, setSubcategories] = useState([]);
-
-  useEffect(() => {
-    const go = async () => {
-      const response = await fetch("/api/Products");
-      const data = await response.json();
-      setProducts(data);
-    };
-    go();
-  }, []);
-  useEffect(() => {
-    const go = async () => {
-      const response = await fetch("/api/Subcategories");
-      const data = await response.json();
-      setSubcategories(data);
-    };
-    go();
-  }, []);
-  useEffect(() => {
-    const go = async () => {
-      const response = await fetch("/api/Categories");
-      const data = await response.json();
-      setCategories(data);
-    };
-    go();
-  }, []);
-  const cartList = {};
-  const subcategoryItems = subcategories.map((item) => (
-    <button>{item.name}</button>
-  ));
-
   return (
     <ThemeProvider theme={lightTheme}>
       <div className="page">
         <div className="header">AJ's Bar and Grill</div>
 
         <div className="main">
-          <div className="subCategoryContainer">{subcategoryItems}</div>
-
-          <div className="itemListContainer">
-            <Button className="orderItemTemplate">bleh</Button>
+          <div className="itemsContainer">
+            <div className="categoryContainer"><CategoryList onClick={handleCategoryChange} /></div>
+            <div className="subCategoryContainer"><SubCategoryList onClick={handleSubCategoryChange} categoryID={category?.id} /></div>
+            <div className="itemListContainer"><ProductList onClick={handleProductChange} subcategoryID={subCategory?.id} /></div>
           </div>
-
           <div className="cartContainer">
             <div className="cartTitle">Cart</div>
 
-            <div className="cartList"></div>
+            <div className="cartList">
+              <CartList cart={cart} />
+            </div>
 
             <div className="cartQuantity">
-              <Button onClick={handleMinusButtonClick}>-</Button>
-              <input
-                type="number"
-                value={qty}
-                onBlur={verifyQtyChange}
-                onChange={handleQtyChange}
-                style={{ textAlign: "center" }}
-              />
-              <Button onClick={handleAddButtonClick}>+</Button>
+              <Quantity />
             </div>
           </div>
         </div>
         <div className="customer">customer</div>
       </div>
+      <OptionsWindow onSubmit={handleAddItemToCart} item={optionsWindow}/>
     </ThemeProvider>
   );
 };
