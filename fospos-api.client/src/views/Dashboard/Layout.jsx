@@ -10,7 +10,6 @@ import { apiResolver } from "../../utilities/urlHelper";
 const Layout = () => {
   const [theme, setTheme] = useState(lightTheme);
 
-console.log(import.meta)
 
   return (
     <ThemeProvider theme={theme}>

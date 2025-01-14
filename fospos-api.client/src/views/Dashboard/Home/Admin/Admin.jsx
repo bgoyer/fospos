@@ -14,7 +14,7 @@ const Admin = () => {
           <Tooltip
             side="right"
             trigger={
-              <Button onClick={() => navigate("/admin/products")}>
+              <Button color="red" onClick={() => navigate("/admin/products")}>
                 <Hamburger size={24} weight="bold" />
               </Button>
             }
@@ -34,7 +34,7 @@ const Admin = () => {
           <Tooltip
             side="right"
             trigger={
-              <Button onClick={() => navigate("/admin/sales")}>
+              <Button toggle={true} onClick={() => navigate("/admin/sales")}>
                 <Money size={24} weight="bold" />
               </Button>
             }

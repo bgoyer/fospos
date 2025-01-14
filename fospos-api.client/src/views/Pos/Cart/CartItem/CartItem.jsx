@@ -1,8 +1,10 @@
 
 import { List } from "@phosphor-icons/react"
-import OptionsList from "../OptionsList/OptionsList"
+import OptionsList from "./OptionsList/OptionsList"
 
 const CartItem = ({item}) => {
+
+   
    return(
    <> 
         <div className="title"><p>{item.name}</p></div>
@@ -11,7 +13,7 @@ const CartItem = ({item}) => {
             <div className="price"><p>{item.price}</p></div>
             <div className="itemOptionButton"><button><List /></button></div>
         </div>    
-        <OptionsList optionList={item?.options ?? []} />
+        <OptionsList optionList={filtered} />
     </>)
 }
 

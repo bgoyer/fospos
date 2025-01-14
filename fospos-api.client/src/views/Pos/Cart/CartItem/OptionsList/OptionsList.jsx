@@ -2,8 +2,6 @@
 
 const OptionsList = ({optionList}) => {
     
-    
-    
     return (
         optionList?.map( option =>
             <div className="itemOptionList">

@@ -1,6 +1,4 @@
 import CartItem from "./CartItem/CartItem";
-import "./styles.css";
-
 
 const CartList = ({ cart }) => {
 
