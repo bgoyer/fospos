@@ -4,7 +4,7 @@ import { Button } from "@/components";
 
 import { darkTheme, lightTheme } from "@/utilities/Theme/Theme";
 
-const ThemeSwitcher = ({ onChange }) => {
+const ThemeSwitcher = ({ onChange, themes = {}, themeOrder = [] }) => {
   const [mode, setMode] = useState("light");
 
   const toggleMode = () => {

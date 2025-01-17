@@ -1,32 +1,39 @@
 import { useState } from "react";
+import { NavLink, Outlet, useNavigate } from "react-router";
 import styled from "styled-components";
-import { NavLink, Outlet } from "react-router";
-import { TipJar } from "@phosphor-icons/react";
 
-import { ThemeSwitcher } from "@/components";
+import { Avatar, ThemeSwitcher } from "@/components";
 import { lightTheme, ThemeProvider } from "@/utilities/Theme/Theme";
-import { apiResolver } from "../../utilities/urlHelper";
 
 const Layout = () => {
   const [theme, setTheme] = useState(lightTheme);
+  const navigate = useNavigate();
 
+  const handleLogout = () => {
+    alert("Log Out!");
+    // Handle Log Out!
+    navigate("/admin/users");
+  };
 
   return (
     <ThemeProvider theme={theme}>
       <Home>
         <Header>
-          <HeaderNav>
-            <Logo>
-              <TipJar size={24} weight="bold" />
-            </Logo>
+          <Section>
+            <Avatar>PL</Avatar>
+          </Section>
+          <Section>
             <NavLink to="/">Home</NavLink>
             <NavLink to="admin">Admin</NavLink>
             <NavLink to="pos">Point of Sale</NavLink>
-            <NavLink to='/swagger' target="_blank">
+            <NavLink to="/swagger" target="_blank">
               API Documentation
             </NavLink>
-          </HeaderNav>
-          <ThemeSwitcher onChange={setTheme} />
+          </Section>
+          <Section>
+            <NavLink onClick={handleLogout}>Log Out</NavLink>
+            <ThemeSwitcher onChange={setTheme} />
+          </Section>
         </Header>
         <Content>
           <Outlet />
@@ -63,7 +70,7 @@ const Header = styled.header`
   padding: 12px 16px;
 `;
 
-const HeaderNav = styled.div`
+const Section = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -75,11 +82,6 @@ const HeaderNav = styled.div`
   }
 `;
 
-const Logo = styled.div`
-  color: ${(props) => props.theme.colors.gray12};
-  padding: 4px 24px 4px 8px;
-  line-height: 0;
-  & svg {
-    line-height: 0;
-  }
+const LinkSection = styled(Section)`
+  justify-content: center;
 `;
