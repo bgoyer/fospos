@@ -49,7 +49,6 @@ const RedButton = styled(ButtonBase)`
 `;
 //#endregion
 
-/*
 //#region Toggle
 const ToggleButtonBase = styled.button`
   display: flex;
@@ -101,7 +100,7 @@ const ToggleRedButton = styled(ToggleButtonBase)`
   }
 `;
 //#endregion
-*/
+
 const Button = forwardRef(
   ({ color = "base", children, toggle = false, ...props }, ref) => {
     if (toggle === false) {
