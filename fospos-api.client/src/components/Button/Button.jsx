@@ -47,6 +47,20 @@ const RedButton = styled(ButtonBase)`
     background-color: ${(props) => props.theme.colors.red12};
   }
 `;
+
+const LinkButton = styled.button`
+  display: inline;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: ${(props) => props.theme.colors.blue11};
+  font-size: inherit;
+  padding: 0;
+  &:hover {
+    color: ${(props) => props.theme.colors.blue12};
+  }
+`;
+
 //#endregion
 
 //#region Toggle
@@ -56,7 +70,6 @@ const ToggleButtonBase = styled.button`
   align-items: center;
   justify-content: center;
 
-  background-color: transparent;
   border-radius: 3px;
   border: 2px;
   border-style: solid;
@@ -77,8 +90,6 @@ const ToggleButtonBasic = styled(ToggleButtonBase)`
 `;
 
 const ToggleBlueButton = styled(ToggleButtonBase)`
-  background-color: ${(props) => props.theme.colors.blue11};
-  color: ${(props) => props.theme.colors.gray1};
   &:hover {
     background-color: ${(props) => props.theme.colors.blue12};
   }
@@ -94,7 +105,6 @@ const ToggleGreenButton = styled(ToggleButtonBase)`
 
 const ToggleRedButton = styled(ToggleButtonBase)`
   background-color: ${(props) => props.theme.colors.red11};
-  color: ${(props) => props.theme.colors.gray1};
   &:hover {
     background-color: ${(props) => props.theme.colors.red12};
   }
@@ -111,6 +121,8 @@ const Button = forwardRef(
           ? BlueButton
           : color === "green"
           ? GreenButton
+          : color === "link"
+          ? LinkButton
           : ButtonBasic;
       return (
         <Component ref={ref} {...props}>
