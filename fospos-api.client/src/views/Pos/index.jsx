@@ -5,40 +5,42 @@ import ProductList from "./ProductList/ProductList";
 import Quantity from "./Quantity/Quantity";
 import CartList from "./Cart/CartList";
 import OptionsWindow from "./OptionsWindow/OptionsWindow";
-
+import { useState, useCallback } from "react";
 import "./styles.css";
-import { useEffect, useState } from "react";
 
 const Pos = () => {
   const [category, setCategory] = useState(null);
   const [subCategory, setSubCategory] = useState(null);
-  const [optionsWindow, setOptionsWindow] = useState(null);
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const [cart, setCart] = useState([]);
-  const [showOptions, setShowOptions] = useState(false);
 
-  const handleCategoryClick = (item) => {
+  const handleCategoryClick = useCallback((item) => {
     setCategory(item);
     setSubCategory(null);
-  };
-  const handleSubCategoryClick = (item) => setSubCategory(item);
+  }, []);
 
-  const handleProductClick = (item) => {
-    setShowOptions(true);
-    setOptionsWindow(item);
-  };
-  const handleAddItemToCart = (item) => {
-    setCart((cart) => {
-      return [...cart, item];
-    });
-  };
+  const handleSubCategoryClick = useCallback((item) => {
+    setSubCategory(item);
+  }, []);
+
+  const handleProductClick = useCallback((item) => {
+    setSelectedProduct(item);
+  }, []);
+
+  const handleAddItemToCart = useCallback((item) => {
+    setCart((prevCart) => [...prevCart, item]);
+  }, []);
+
+  const handleCloseOptions = useCallback(() => {
+    setSelectedProduct(null);
+  }, []);
 
   return (
     <ThemeProvider theme={lightTheme}>
       <div className="page">
-        <div className="header">AJ's Bar and Grill</div>
-
-        <div className="main">
-          <div className="itemsContainer">
+        <header className="header">AJ's Bar and Grill</header>
+        <main className="main">
+          <section className="itemsContainer">
             <div className="categoryContainer">
               <CategoryList onClick={handleCategoryClick} />
             </div>
@@ -54,26 +56,24 @@ const Pos = () => {
                 subCategoryID={subCategory?.id}
               />
             </div>
-          </div>
-          <div className="cartContainer">
+          </section>
+          <aside className="cartContainer">
             <div className="cartTitle">Cart</div>
-
             <div className="cartList">
               <CartList cart={cart} />
             </div>
-
             <div className="cartQuantity">
               <Quantity />
             </div>
-          </div>
-        </div>
-        <div className="customer">customer</div>
+          </aside>
+        </main>
+        <footer className="customer">customer</footer>
       </div>
       <OptionsWindow
-        show={showOptions}
+        show={Boolean(selectedProduct)}
         onSubmit={handleAddItemToCart}
-        onClose={() => setShowOptions(false)}
-        item={optionsWindow}
+        onClose={handleCloseOptions}
+        item={selectedProduct}
       />
     </ThemeProvider>
   );

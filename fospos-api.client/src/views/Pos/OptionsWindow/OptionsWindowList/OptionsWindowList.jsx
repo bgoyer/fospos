@@ -1,18 +1,17 @@
 import { useEffect, useState } from "react";
+import OptionsWindowListItem from "./OptionsWindowListItem/OptionsWindowListItem";
+const OptionsWindowList = ({ options }) => {
+  useEffect(() => {
+    console.log(options);
+  }, [options]);
 
-const OptionsWindowList = ({option}) => {
-  const [isToggled, setIsToggled] = useState(false);
-    
-    useEffect(() => {
-        console.log(option)
-    }, [option])
+  return (
+    <>
+      {options?.map((item) => (
+        <OptionsWindowListItem key={item.id} item={item} />
+      ))}
+    </>
+  );
+};
 
-  const handleOnClick = () => {
-    setIsToggled()
-  }
-    return option?.map((item) => (
-        <button key={item.id} className={isToggled ? 'toggled' : ''}>{item.name}</button>
-      ));
-}
-
-export default OptionsWindowList
+export default OptionsWindowList;

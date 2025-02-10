@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import OptionsWindowList from "./OptionsWindowList/OptionsWindowList";
 
 const OptionsWindow = ({ show, item, onClose }) => {
-
   const handleCloseClick = () => {
     onClose();
   };
@@ -13,9 +12,7 @@ const OptionsWindow = ({ show, item, onClose }) => {
 
   useEffect(() => {
     setFiltered(
-      item == null
-        ? []
-        : options.filter((s) => s.productID === item.id)
+      item == null ? [] : options.filter((s) => s.productID === item.id)
     );
   }, [item]);
 
@@ -28,16 +25,16 @@ const OptionsWindow = ({ show, item, onClose }) => {
     go();
   }, []);
 
-
   return (
-    <div className={cn("optionsMenuBackground", { visible: show }) }>
-    <div className="optionsMenuBackground" onClick={handleCloseClick}></div>
+    <div className={cn("optionsMenuBackground", { visible: show })}>
+      <div className="optionsMenuBackground" onClick={handleCloseClick}></div>
       <div className="optionsMenuBody">
-        <div className="header">
-
-        </div>
+        <div className="header"></div>
         <div className="optionsMenuList">
           <OptionsWindowList option={filtered} />
+        </div>
+        <div className="footer">
+          <button onClick={handleCloseClick}>Close</button>
         </div>
       </div>
     </div>
