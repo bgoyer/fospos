@@ -1,18 +1,22 @@
-const OptionsWindowListItem = ({ item }) => {
-  const [isToggled, setIsToggled] = useState(false);
+import React, { useState } from "react";
+import { Button } from "@/components";
+
+const OptionsWindowListItem = (option) => {
+  const [isOn, setIsOn] = useState(false);
 
   const handleOnClick = () => {
-    setIsToggled((prev) => !prev);
+    setIsOn((prev) => !prev);
   };
-
+  
+  console.log(option.option.name);
   return (
-    <button
-      key={item.id}
-      className={isToggled ? "toggled" : ""}
+    <Button
+      key={option.option.id}
       onClick={handleOnClick}
+      color={isOn ? "green" : "blue"}
     >
-      {item.name}
-    </button>
+      {option.option.name}
+    </Button>
   );
 };
 

@@ -34,7 +34,7 @@ const Admin = () => {
           <Tooltip
             side="right"
             trigger={
-              <Button toggle={true} onClick={() => navigate("/admin/sales")}>
+              <Button onClick={() => navigate("/admin/sales")}>
                 <Money size={24} weight="bold" />
               </Button>
             }

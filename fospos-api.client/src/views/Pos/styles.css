@@ -1,33 +1,33 @@
-﻿:root{
+﻿:root {
 	--mainViewHeight: 85vh;
 	--headerViewHeight: 5vh;
 	--customerViewHeight: 10vh;
-
+  
 	--itemButtonSize: 10vw;
-
+  
 	--fontSizeButton: 3vw;
-}
-
-.page {
+  }
+  
+  .page {
 	height: 100vh;
 	width: 100vw;
 	display: grid;
 	grid-template-rows: var(--headerViewHeight) var(--mainViewHeight) var(--customerViewHeight);
-}
-.header {
+  }
+  .header {
 	display: flex;
 	padding: 4px 24px;
 	font-size: 1.5rem;
-    align-items: center;
+	align-items: center;
 	flex-direction: row;
 	justify-content: center;
 	background-color: darkgray;
-}
-.main {
+  }
+  .main {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-}
-.subCategoryContainer {
+  }
+  .subCategoryContainer {
 	display: flex;
 	flex-direction: row;
 	color: black;
@@ -35,76 +35,77 @@
 	height: auto;
 	width: 100%;
 	overflow-x: auto;
-}
-.itemListContainer {
+  }
+  .itemListContainer {
 	display: flex;
 	color: black;
 	height: auto;
 	overflow-y: auto;
 	background-color: white;
 	flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-.itemsContainer{
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+  }
+  .itemsContainer {
 	display: grid;
 	grid-template-rows: auto auto 1fr;
 	height: var(--mainViewHeight);
-}
-.cartContainer {
+  }
+  .cartContainer {
 	display: grid;
 	height: var(--mainViewHeight);
 	grid-template-rows: auto 1fr auto auto;
 	color: white;
 	background-color: black;
-}
-.cartTitle {
+  }
+  .cartTitle {
 	color: white;
 	display: flex;
 	justify-content: space-evenly;
 	background-color: lightgray;
 	font-size: 24px;
 	padding: 4px 8px;
-}
-
-.cartList {
+  }
+  .cartList {
 	overflow-y: scroll;
 	overflow-x: wrap;
 	scroll-behavior: smooth;
 	background-color: gray;
 	-ms-overflow-style: none;  /* IE and Edge */
 	scrollbar-width: none;  /* Firefox */
-}
-.cartList::-webkit-scrollbar {
+  }
+  .cartList::-webkit-scrollbar {
 	display: none;
-}
-
-.cartQuantity {
+  }
+  .cartQuantity {
 	background-color: lightgray;
 	display: grid;
 	grid-template-columns: 7.5vw 35vw 7.5vw;
-}
-.customer {
+  }
+  .customer {
 	background-color: darkgray;
-}
-
-.orderItemTemplate{
+  }
+  .orderItemTemplate {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 1%;	
+	margin: 1%;
 	font-size: var(--fontSizeButton);
 	width: var(--itemButtonSize);
 	height: var(--itemButtonSize);
-}
-.title {
+  }
+  .cartItem {
+	border: 1px solid #ccc;
+	margin: 4px;
+	padding: 4px;
+  }
+  .title {
 	height: 4vh;
 	display: grid;
 	justify-items: center;
 	align-content: center;
 	background-color: darkgrey;
   }
-  
   .containerTop {
 	display: grid;
 	grid-template-columns: 20% 60% 20%;
@@ -118,7 +119,6 @@
 	justify-items: center;
 	align-content: center;
   }
-  
   .price {
 	height: 4vh;
 	display: grid;
@@ -142,7 +142,6 @@
 	padding-left: 15px;
 	text-wrap: auto;
   }
-  
   .optionsMenuBackground {
 	display: none; /* Hidden by default */
 	position: fixed; /* Stay in place */
@@ -167,4 +166,7 @@
 	display: grid;
 	grid-template-rows: 20% 70% 10%;
   }
-  
+  .optionsMenuFooter {
+	display: grid;
+	grid-template-columns: 50% 50%;
+  }

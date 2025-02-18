@@ -1,34 +1,44 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 
 const SubCategoryList = ({ onClick, categoryID = null }) => {
   const [subcategories, setSubcategories] = useState([]);
-  const [filtered, setFiltered] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  const handleSubcategoryButtonClick = (item) => () => {
-    if (onClick != null) {
-      onClick(item);
-    }
-  };
-
-  useEffect(() => {
-    setFiltered(
-      categoryID == null
-        ? []
-        : subcategories.filter((s) => s.categoryID === categoryID)
-    );
-  }, [categoryID]);
+  const filtered = useMemo(() => {
+    return categoryID === null
+      ? []
+      : subcategories.filter((s) => s.categoryID === categoryID);
+  }, [categoryID, subcategories]);
 
   useEffect(() => {
-    const go = async () => {
-      const response = await fetch("/api/subcategory");
-      const data = await response.json();
-      setSubcategories(data);
+    const fetchSubcategories = async () => {
+      try {
+        const response = await fetch("/api/subcategory");
+        if (!response.ok) {
+          throw new Error("Failed to fetch subcategories");
+        }
+        const data = await response.json();
+        setSubcategories(data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
     };
-    go();
+    fetchSubcategories();
   }, []);
 
+  if (loading) {
+    return <div>Loading subcategories...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
   return filtered.map((item) => (
-    <button key={item.id} onClick={handleSubcategoryButtonClick(item)}>
+    <button key={item.id} onClick={() => onClick && onClick(item)}>
       {item.name}
     </button>
   ));

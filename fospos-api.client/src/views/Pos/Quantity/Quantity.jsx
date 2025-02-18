@@ -1,29 +1,42 @@
 import { Button } from "@/components";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 const Quantity = () => {
-  const [qty, setQty] = useState(1);
+  const MIN_QTY = 1;
+  const MAX_QTY = 50;
   
-  const handleAddButtonClick = () => {
-    setQty((current) => (current === 50 ? 50 : current + 1));
-  };
-
-  const handleMinusButtonClick = () => {
-    setQty((current) => (current === 1 ? 1 : current - 1));
-  };
-
-  const handleQtyChange = (evt) => {
+  const [qty, setQty] = useState(MIN_QTY);
+  
+  const handleAddButtonClick = useCallback(() => {
+    setQty(current => (current < MAX_QTY ? current + 1 : MAX_QTY));
+  }, []);
+  
+  const handleMinusButtonClick = useCallback(() => {
+    setQty(current => (current > MIN_QTY ? current - 1 : MIN_QTY));
+  }, []);
+  
+  const handleQtyChange = useCallback((evt) => {
     const value = Number(evt.currentTarget.value);
-    setQty(value);
-  };
-  const verifyQtyChange = () => {
-    setQty(qty < 1 ? 1 : qty > 50 ? 50 : qty);
-  };
+    if (!isNaN(value)) {
+      setQty(value);
+    }
+  }, []);
+  
+  const verifyQtyChange = useCallback(() => {
+    setQty(current => {
+      if (current < MIN_QTY) return MIN_QTY;
+      if (current > MAX_QTY) return MAX_QTY;
+      return current;
+    });
+  }, []);
+  
   return (
     <>
       <Button onClick={handleMinusButtonClick}>-</Button>
       <input
         type="number"
+        min={MIN_QTY}
+        max={MAX_QTY}
         value={qty}
         onBlur={verifyQtyChange}
         onChange={handleQtyChange}

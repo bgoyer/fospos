@@ -3,8 +3,7 @@ import OptionsList from "./OptionsList/OptionsList";
 import PropTypes from "prop-types";
 
 const CartItem = ({ item }) => {
-  // Assuming that the filtered options should come from item.options.
-  // Replace this logic with the appropriate filtering if needed.
+  // Assuming that filtered options come from item.options
   const filteredOptions = item.options || [];
 
   return (

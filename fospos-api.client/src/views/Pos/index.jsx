@@ -28,7 +28,9 @@ const Pos = () => {
   }, []);
 
   const handleAddItemToCart = useCallback((item) => {
-    setCart((prevCart) => [...prevCart, item]);
+    setCart(() => [...cart, item]);
+    console.log(cart);
+    handleCloseOptions();
   }, []);
 
   const handleCloseOptions = useCallback(() => {
@@ -60,7 +62,7 @@ const Pos = () => {
           <aside className="cartContainer">
             <div className="cartTitle">Cart</div>
             <div className="cartList">
-              <CartList cart={cart} />
+              <CartList /*cart={cart}*/ />
             </div>
             <div className="cartQuantity">
               <Quantity />
@@ -73,6 +75,7 @@ const Pos = () => {
         show={Boolean(selectedProduct)}
         onSubmit={handleAddItemToCart}
         onClose={handleCloseOptions}
+        onAddToCart={handleAddItemToCart}
         item={selectedProduct}
       />
     </ThemeProvider>

@@ -7,9 +7,6 @@ const ButtonBase = styled.button`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-
-  background-color: ${(props) => props.theme.colors.gray12};
-  color: ${(props) => props.theme.colors.gray1};
   padding: 10px;
   border-radius: 5px;
   border: none;
@@ -47,20 +44,6 @@ const RedButton = styled(ButtonBase)`
     background-color: ${(props) => props.theme.colors.red12};
   }
 `;
-
-const LinkButton = styled.button`
-  display: inline;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: ${(props) => props.theme.colors.blue11};
-  font-size: inherit;
-  padding: 0;
-  &:hover {
-    color: ${(props) => props.theme.colors.blue12};
-  }
-`;
-
 //#endregion
 
 //#region Toggle
@@ -69,15 +52,10 @@ const ToggleButtonBase = styled.button`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-
-  border-radius: 3px;
-  border: 2px;
-  border-style: solid;
-  border-color: ${(props) => props.theme.colors.gray12};
-  color: ${(props) => props.theme.colors.gray1};
+  background-color: transparent;
   padding: 10px;
+  border: 2px solid ${(props) => props.theme.colors.gray12};
   border-radius: 5px;
-  border: none;
   cursor: pointer;
 `;
 
@@ -90,6 +68,8 @@ const ToggleButtonBasic = styled(ToggleButtonBase)`
 `;
 
 const ToggleBlueButton = styled(ToggleButtonBase)`
+  background-color: ${(props) => props.theme.colors.blue11};
+  color: ${(props) => props.theme.colors.gray1};
   &:hover {
     background-color: ${(props) => props.theme.colors.blue12};
   }
@@ -105,39 +85,37 @@ const ToggleGreenButton = styled(ToggleButtonBase)`
 
 const ToggleRedButton = styled(ToggleButtonBase)`
   background-color: ${(props) => props.theme.colors.red11};
+  color: ${(props) => props.theme.colors.gray1};
   &:hover {
     background-color: ${(props) => props.theme.colors.red12};
   }
 `;
 //#endregion
 
+const normalButtonMap = {
+  red: RedButton,
+  blue: BlueButton,
+  green: GreenButton,
+  base: ButtonBasic,
+};
+
+const toggleButtonMap = {
+  red: ToggleRedButton,
+  blue: ToggleBlueButton,
+  green: ToggleGreenButton,
+  base: ToggleButtonBasic,
+};
+
 const Button = forwardRef(
   ({ color = "base", children, toggle = false, ...props }, ref) => {
-    if (toggle === false) {
-      const Component =
-        color === "red"
-          ? RedButton
-          : color === "blue"
-          ? BlueButton
-          : color === "green"
-          ? GreenButton
-          : color === "link"
-          ? LinkButton
-          : ButtonBasic;
-      return (
-        <Component ref={ref} {...props}>
-          {children}
-        </Component>
-      );
-    }
-    if (toggle === true) {
-      const Component = BlueButton;
-      return (
-        <Component ref={ref} {...props}>
-          {children}
-        </Component>
-      );
-    }
+    const Component = toggle
+      ? toggleButtonMap[color] || ToggleButtonBasic
+      : normalButtonMap[color] || ButtonBasic;
+    return (
+      <Component ref={ref} {...props}>
+        {children}
+      </Component>
+    );
   }
 );
 

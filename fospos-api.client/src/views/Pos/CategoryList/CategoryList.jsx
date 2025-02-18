@@ -2,23 +2,42 @@ import { useEffect, useState } from "react";
 
 const CategoryList = ({ onClick }) => {
   const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const handleClick = (item) => () => {
-    if (onClick != null) {
+    if (onClick) {
       onClick(item);
     }
   };
 
   useEffect(() => {
-    const go = async () => {
-      const response = await fetch("/api/category");
-      const data = await response.json();
-      setCategories(data);
+    const fetchCategories = async () => {
+      try {
+        const response = await fetch("/api/category");
+        if (!response.ok) {
+          throw new Error("Failed to fetch categories");
+        }
+        const data = await response.json();
+        setCategories(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
     };
-    go();
+    fetchCategories();
   }, []);
 
-  return categories?.map((item) => (
+  if (loading) {
+    return <div>Loading categories...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  return categories.map((item) => (
     <button key={item.id} onClick={handleClick(item)}>
       {item.name}
     </button>
